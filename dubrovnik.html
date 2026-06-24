@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dubrovník</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+}
+
+/* BACK BUTTON */
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    background:rgba(255,255,255,0.85);
+    padding:10px 18px;
+    border-radius:50px;
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+    z-index:999;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* HERO */
+.hero{
+    height:70vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("dubrovnik_hero.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.hero h1{ font-size:4rem; }
+
+/* SECTIONS */
+section{ padding:80px 10%; }
+
+.title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:30px;
+}
+
+.box{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    line-height:1.8;
+}
+
+/* BUBBLES LIKE PLITVICE STYLE */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:40px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    cursor:pointer;
+    transition:0.3s;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    opacity:0.8;
+}
+
+/* hidden extra text */
+.more{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:0.4s ease;
+    margin-top:0;
+}
+
+/* OPEN */
+.card.active .more{
+    max-height:500px;
+    opacity:1;
+    margin-top:10px;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    margin-top:40px;
+}
+
+.gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+/* LIGHTBOX */
+#lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+#lightbox img{ max-width:90%; }
+
+/* TOP BTN */
+.top-btn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#008cff;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    opacity:0;
+    pointer-events:none;
+}
+.top-btn.show{ opacity:1; pointer-events:auto; }
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:25px;
+    background:#111;
+    color:white;
+    margin-top:60px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .hero h1{ font-size:2.2rem; }
+    section{ padding:60px 6%; }
+    .title{ font-size:1.8rem; }
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="back-btn">⬅ Back</a>
+
+<section class="hero">
+<h1>Dubrovník</h1>
+</section>
+
+<section>
+<h2 class="title">O meste</h2>
+<div class="box">
+Dubrovník je “Perla Jadranu”, mega historické mesto UNESCO.  
+Staré hradby, Game of Thrones vibes a úplne cinematic city.
+</div>
+</section>
+
+<section>
+<h2 class="title">Zaujimavosti</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🏰 Hradby</h3>
+<p>Staré opevnenie mesta</p>
+<div class="more">
+Dubrovnícke hradby obklopujú celé staré mesto.  
+Majú vyše 2 km a sú z 16. storočia.  
+Chodíš po nich a máš brutálny výhľad na more + strechy mesta.
+</div>
+</div>
+
+<div class="card">
+<h3>🎬 Filmové lokácie</h3>
+<p>Game of Thrones real life</p>
+<div class="more">
+Dubrovník je King’s Landing.  
+Natáčali sa tu aj veľké Hollywood produkcie.  
+Ak si fanúšik, budeš mať pocit že si v seriáli.
+</div>
+</div>
+
+<div class="card">
+<h3>🌊 More</h3>
+<p>čistý Jadran</p>
+<div class="more">
+Voda je mega čistá a priezračná.  
+Vidíš dno aj keď je hlbšie.  
+Ideálne na kúpanie, kajak alebo chill.
+</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2 class="title">Galéria</h2>
+
+<div class="gallery">
+<img src="dubrovnik1.jpg">
+<img src="dubrovnik2.jpg">
+<img src="dubrovnik3.jpg">
+</div>
+</section>
+
+<div id="lightbox"><img></div>
+
+<footer class="footer">© 2026 Croatia Travel</footer>
+
+<script>
+
+// bubbles
+document.querySelectorAll(".card").forEach(c=>{
+    c.onclick=()=>c.classList.toggle("active");
+});
+
+// lightbox
+const imgs=document.querySelectorAll(".gallery img");
+const box=document.getElementById("lightbox");
+
+imgs.forEach(i=>{
+    i.onclick=()=>{
+        box.style.display="flex";
+        box.querySelector("img").src=i.src;
+    }
+});
+
+box.onclick=()=>box.style.display="none";
+
+</script>
+
+</body>
+</html>
